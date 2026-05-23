@@ -31,11 +31,14 @@
       font-family:'Inter',sans-serif;
 
       background:
-        linear-gradient(
-          180deg,
-          #020617,
-          #081226
-        );
+
+        radial-gradient(
+          circle at top,
+          #0ea5e9 0%,
+          #020617 35%
+        ),
+
+        #020617;
 
       min-height:100vh;
 
@@ -55,25 +58,41 @@
       width:100%;
       max-width:390px;
 
-      background:#0f172a;
+      background:
+        linear-gradient(
+          180deg,
+          rgba(15,23,42,.98),
+          rgba(2,6,23,1)
+        );
 
       border-radius:38px;
 
       overflow:hidden;
 
+      border:
+        1px solid rgba(255,255,255,.05);
+
       box-shadow:
-        0 30px 80px rgba(0,0,0,.6);
+        0 30px 80px rgba(0,0,0,.65),
+        0 0 60px rgba(56,189,248,.08);
 
       position:relative;
     }
 
     .top{
 
-      height:280px;
+      height:320px;
 
       position:relative;
 
       overflow:hidden;
+
+      background:
+        linear-gradient(
+          180deg,
+          #0f172a 0%,
+          #020617 100%
+        );
     }
 
     .top img{
@@ -82,6 +101,15 @@
       height:100%;
 
       object-fit:cover;
+
+      object-position:center top;
+
+      filter:
+        contrast(1.05)
+        saturate(.95)
+        brightness(.92);
+
+      transform:scale(1.02);
     }
 
     .overlay{
@@ -91,10 +119,18 @@
       inset:0;
 
       background:
+
         linear-gradient(
           to top,
-          rgba(15,23,42,1),
-          rgba(15,23,42,.15)
+          rgba(2,6,23,1) 12%,
+          rgba(2,6,23,.75) 38%,
+          rgba(2,6,23,.15) 65%
+        ),
+
+        radial-gradient(
+          circle at top right,
+          rgba(56,189,248,.35),
+          transparent 35%
         );
     }
 
@@ -103,7 +139,7 @@
       position:absolute;
 
       left:28px;
-      bottom:26px;
+      bottom:28px;
 
       z-index:5;
     }
@@ -130,37 +166,15 @@
 
     .company{
 
-      margin-top:12px;
+      margin-top:14px;
 
-      display:inline-flex;
-
-      align-items:center;
-
-      gap:10px;
-
-      background:
-        rgba(255,255,255,.08);
-
-      padding:10px 14px;
-
-      border-radius:999px;
-
-      backdrop-filter:blur(10px);
+      color:#94a3b8;
 
       font-size:14px;
-    }
 
-    .dot{
+      font-weight:500;
 
-      width:10px;
-      height:10px;
-
-      border-radius:50%;
-
-      background:#38bdf8;
-
-      box-shadow:
-        0 0 12px #38bdf8;
+      letter-spacing:.3px;
     }
 
     .actions{
@@ -171,7 +185,7 @@
 
       gap:14px;
 
-      margin-top:-28px;
+      margin-top:-30px;
 
       position:relative;
 
@@ -319,7 +333,7 @@
     <div class="top">
 
       <img
-        src="https://drive.google.com/thumbnail?id=AKGpihZ-7S6xKI8PtlzclyaC5VewwYJVXY-BlRKuCeB1akPSp9YxH6y4FBr3pJB8DXnvK2eFrpKA_JPu27Z_iXaFHW3BQSotSUBZk8Y"
+        src="./profile.jpg"
       />
 
       <div class="overlay"></div>
@@ -336,11 +350,7 @@
         </div>
 
         <div class="company">
-
-          <div class="dot"></div>
-
           BlueWave Technology
-
         </div>
 
       </div>
