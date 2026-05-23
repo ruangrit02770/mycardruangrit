@@ -172,29 +172,25 @@
       letter-spacing:.3px;
     }
 
+    .bottom-panel{
+
+      padding:26px 22px 24px;
+    }
+
     .actions{
 
       display:flex;
 
-      justify-content:center;
+      justify-content:space-between;
 
-      gap:16px;
+      gap:14px;
 
-      padding:22px;
-
-      background:
-        rgba(15,23,42,.92);
-
-      border-top:
-        1px solid rgba(255,255,255,.05);
+      margin-bottom:22px;
     }
 
     .icon-btn{
 
-      width:68px;
-      height:68px;
-
-      border-radius:24px;
+      flex:1;
 
       background:
         rgba(255,255,255,.04);
@@ -202,21 +198,25 @@
       border:
         1px solid rgba(255,255,255,.06);
 
-      display:flex;
+      border-radius:24px;
 
-      justify-content:center;
-
-      align-items:center;
+      padding:18px 12px;
 
       text-decoration:none;
 
-      color:white;
+      display:flex;
 
-      font-size:26px;
+      flex-direction:column;
+
+      align-items:center;
+
+      justify-content:center;
+
+      gap:12px;
 
       transition:.25s;
 
-      backdrop-filter:blur(12px);
+      backdrop-filter:blur(14px);
     }
 
     .icon-btn:hover{
@@ -227,9 +227,12 @@
         rgba(255,255,255,.08);
     }
 
-    .save{
+    .icon-bg{
 
-      margin:0 22px 22px;
+      width:52px;
+      height:52px;
+
+      border-radius:18px;
 
       display:flex;
 
@@ -237,45 +240,43 @@
 
       justify-content:center;
 
-      gap:12px;
-
-      padding:18px;
-
-      border-radius:24px;
-
-      text-decoration:none;
+      font-size:22px;
 
       background:
-        rgba(255,255,255,.05);
+        linear-gradient(
+          135deg,
+          rgba(14,165,233,.18),
+          rgba(37,99,235,.22)
+        );
 
-      border:
-        1px solid rgba(255,255,255,.08);
+      box-shadow:
+        0 0 18px rgba(14,165,233,.18);
+    }
 
-      color:white;
+    .icon-btn small{
+
+      color:#cbd5e1;
+
+      font-size:13px;
 
       font-weight:600;
 
-      font-size:16px;
-
-      transition:.25s;
-
-      backdrop-filter:blur(12px);
+      letter-spacing:.3px;
     }
 
-    .save:hover{
+    .save{
 
-      transform:translateY(-3px);
+      display:flex;
 
-      background:
-        rgba(255,255,255,.08);
-    }
+      align-items:center;
 
-    .save-icon{
+      justify-content:space-between;
 
-      width:30px;
-      height:30px;
+      text-decoration:none;
 
-      border-radius:50%;
+      padding:18px 20px;
+
+      border-radius:26px;
 
       background:
         linear-gradient(
@@ -284,31 +285,73 @@
           #2563eb
         );
 
+      color:white;
+
+      transition:.25s;
+
+      box-shadow:
+        0 12px 35px rgba(14,165,233,.22);
+    }
+
+    .save:hover{
+
+      transform:translateY(-3px);
+
+      opacity:.95;
+    }
+
+    .save-left{
+
+      display:flex;
+
+      align-items:center;
+
+      gap:14px;
+
+      font-weight:600;
+
+      font-size:16px;
+    }
+
+    .save-icon{
+
+      width:34px;
+      height:34px;
+
+      border-radius:50%;
+
+      background:
+        rgba(255,255,255,.18);
+
       display:flex;
 
       align-items:center;
 
       justify-content:center;
 
-      font-size:20px;
+      font-size:22px;
 
       font-weight:700;
+    }
 
-      box-shadow:
-        0 0 18px rgba(14,165,233,.45);
+    .save-arrow{
+
+      font-size:22px;
+
+      opacity:.9;
     }
 
     .footer{
 
-      padding-bottom:22px;
+      margin-top:20px;
 
       text-align:center;
 
       color:#64748b;
 
-      font-size:12px;
+      font-size:11px;
 
-      letter-spacing:.5px;
+      letter-spacing:1.4px;
     }
 
   </style>
@@ -345,47 +388,79 @@
 
     </div>
 
-    <div class="actions">
+    <div class="bottom-panel">
+
+      <div class="actions">
+
+        <a
+          class="icon-btn"
+          href="tel:+66812345678"
+        >
+
+          <span class="icon-bg">
+            📞
+          </span>
+
+          <small>Call</small>
+
+        </a>
+
+        <a
+          class="icon-btn"
+          href="mailto:test@example.com"
+        >
+
+          <span class="icon-bg">
+            ✉️
+          </span>
+
+          <small>Email</small>
+
+        </a>
+
+        <a
+          class="icon-btn"
+          href="https://line.me/ti/p/yourid"
+          target="_blank"
+        >
+
+          <span class="icon-bg">
+            💬
+          </span>
+
+          <small>LINE</small>
+
+        </a>
+
+      </div>
 
       <a
-        class="icon-btn"
-        href="tel:+66812345678"
+        class="save"
+        href="contact.vcf"
       >
-        📞
+
+        <div class="save-left">
+
+          <span class="save-icon">
+            +
+          </span>
+
+          <span>
+            Add Contact
+          </span>
+
+        </div>
+
+        <span class="save-arrow">
+          →
+        </span>
+
       </a>
 
-      <a
-        class="icon-btn"
-        href="mailto:test@example.com"
-      >
-        ✉️
-      </a>
+      <div class="footer">
+        NFC DIGITAL BUSINESS CARD
+      </div>
 
-      <a
-        class="icon-btn"
-        href="https://line.me/ti/p/yourid"
-        target="_blank"
-      >
-        💬
-      </a>
-
-    </div>
-
-    <a
-      class="save"
-      href="contact.vcf"
-    >
-
-      <span class="save-icon">
-        +
-      </span>
-
-      Add Contact
-
-    </a>
-
-    <div class="footer">
-      NFC DIGITAL BUSINESS CARD
     </div>
 
   </div>
