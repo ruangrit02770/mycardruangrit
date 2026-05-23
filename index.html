@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
   >
 
@@ -31,7 +31,11 @@
       font-family:'Inter',sans-serif;
 
       background:
-        #050816;
+        linear-gradient(
+          180deg,
+          #020617,
+          #081226
+        );
 
       min-height:100vh;
 
@@ -44,187 +48,147 @@
       padding:24px;
 
       color:white;
-
-      overflow:hidden;
-    }
-
-    body::before{
-
-      content:'';
-
-      position:fixed;
-
-      width:500px;
-      height:500px;
-
-      background:
-        radial-gradient(
-          circle,
-          rgba(56,189,248,.18),
-          transparent 70%
-        );
-
-      top:-180px;
-      right:-120px;
-
-      filter:blur(20px);
     }
 
     .card{
 
       width:100%;
-      max-width:400px;
+      max-width:390px;
 
-      background:
-        rgba(15,23,42,.72);
+      background:#0f172a;
 
-      backdrop-filter:
-        blur(22px);
+      border-radius:38px;
 
-      border:
-        1px solid rgba(255,255,255,.06);
-
-      border-radius:32px;
-
-      padding:42px 28px;
+      overflow:hidden;
 
       box-shadow:
-        0 20px 80px rgba(0,0,0,.45);
+        0 30px 80px rgba(0,0,0,.6);
 
       position:relative;
     }
 
-    .status{
+    .top{
 
-      width:12px;
-      height:12px;
+      height:280px;
+
+      position:relative;
+
+      overflow:hidden;
+    }
+
+    .top img{
+
+      width:100%;
+      height:100%;
+
+      object-fit:cover;
+    }
+
+    .overlay{
+
+      position:absolute;
+
+      inset:0;
+
+      background:
+        linear-gradient(
+          to top,
+          rgba(15,23,42,1),
+          rgba(15,23,42,.15)
+        );
+    }
+
+    .profile{
+
+      position:absolute;
+
+      left:28px;
+      bottom:26px;
+
+      z-index:5;
+    }
+
+    h1{
+
+      font-size:42px;
+
+      font-weight:800;
+
+      line-height:.95;
+
+      letter-spacing:-2px;
+    }
+
+    .position{
+
+      margin-top:10px;
+
+      color:#cbd5e1;
+
+      font-size:16px;
+    }
+
+    .company{
+
+      margin-top:12px;
+
+      display:inline-flex;
+
+      align-items:center;
+
+      gap:10px;
+
+      background:
+        rgba(255,255,255,.08);
+
+      padding:10px 14px;
+
+      border-radius:999px;
+
+      backdrop-filter:blur(10px);
+
+      font-size:14px;
+    }
+
+    .dot{
+
+      width:10px;
+      height:10px;
 
       border-radius:50%;
 
       background:#38bdf8;
 
-      margin:auto;
-
       box-shadow:
-        0 0 18px #38bdf8;
+        0 0 12px #38bdf8;
     }
 
-    .avatar{
-
-      width:108px;
-      height:108px;
-
-      border-radius:50%;
-
-      object-fit:cover;
-
-      display:block;
-
-      margin:28px auto 0;
-
-      border:
-        2px solid rgba(255,255,255,.08);
-    }
-
-    h1{
-
-      margin-top:22px;
-
-      text-align:center;
-
-      font-size:32px;
-
-      font-weight:700;
-
-      letter-spacing:-1.2px;
-    }
-
-    .position{
-
-      text-align:center;
-
-      margin-top:10px;
-
-      color:#7dd3fc;
-
-      font-size:15px;
-
-      font-weight:600;
-    }
-
-    .company{
-
-      text-align:center;
-
-      margin-top:6px;
-
-      color:#94a3b8;
-
-      font-size:14px;
-    }
-
-    .divider{
-
-      width:100%;
-
-      height:1px;
-
-      background:
-        rgba(255,255,255,.06);
-
-      margin:34px 0 26px;
-    }
-
-    .action{
+    .actions{
 
       display:flex;
 
-      align-items:center;
+      justify-content:center;
 
-      justify-content:space-between;
+      gap:14px;
 
-      text-decoration:none;
+      margin-top:-28px;
 
-      color:white;
+      position:relative;
 
-      padding:18px 20px;
+      z-index:10;
+    }
+
+    .icon-btn{
+
+      width:64px;
+      height:64px;
 
       border-radius:22px;
 
-      background:
-        rgba(255,255,255,.03);
+      background:#111827;
 
       border:
-        1px solid rgba(255,255,255,.05);
-
-      margin-bottom:16px;
-
-      transition:.25s;
-    }
-
-    .action:hover{
-
-      transform:translateY(-2px);
-
-      background:
-        rgba(255,255,255,.05);
-    }
-
-    .left{
-
-      display:flex;
-
-      align-items:center;
-
-      gap:16px;
-    }
-
-    .icon{
-
-      width:52px;
-      height:52px;
-
-      border-radius:18px;
+        1px solid rgba(255,255,255,.06);
 
       display:flex;
 
@@ -232,55 +196,117 @@
 
       align-items:center;
 
-      font-size:20px;
+      text-decoration:none;
 
-      background:
-        rgba(56,189,248,.12);
+      color:white;
 
-      color:#7dd3fc;
+      font-size:24px;
+
+      transition:.25s;
+
+      box-shadow:
+        0 10px 25px rgba(0,0,0,.35);
     }
 
-    .label{
+    .icon-btn:hover{
+
+      transform:translateY(-4px);
+
+      background:#1e293b;
+    }
+
+    .content{
+
+      padding:32px 24px 24px;
+    }
+
+    .section{
+
+      margin-top:10px;
+
+      background:
+        rgba(255,255,255,.03);
+
+      border:
+        1px solid rgba(255,255,255,.05);
+
+      border-radius:26px;
+
+      padding:24px;
+    }
+
+    .section h2{
+
+      font-size:22px;
+
+      margin-bottom:14px;
+
+      font-weight:700;
+    }
+
+    .section p{
+
+      color:#cbd5e1;
+
+      line-height:1.7;
+
+      font-size:15px;
+    }
+
+    .save{
+
+      margin-top:22px;
 
       display:flex;
 
-      flex-direction:column;
-    }
+      align-items:center;
 
-    .label span{
+      justify-content:center;
+
+      gap:12px;
+
+      width:100%;
+
+      padding:18px;
+
+      border-radius:22px;
+
+      text-decoration:none;
+
+      background:
+        linear-gradient(
+          135deg,
+          #0ea5e9,
+          #2563eb
+        );
+
+      color:white;
+
+      font-weight:700;
 
       font-size:16px;
 
-      font-weight:600;
+      transition:.25s;
     }
 
-    .label small{
+    .save:hover{
 
-      margin-top:4px;
+      transform:translateY(-3px);
 
-      color:#94a3b8;
-
-      font-size:13px;
-    }
-
-    .arrow{
-
-      color:#64748b;
-
-      font-size:20px;
+      opacity:.92;
     }
 
     .footer{
 
-      text-align:center;
+      margin-top:18px;
 
-      margin-top:30px;
+      text-align:center;
 
       color:#64748b;
 
       font-size:12px;
 
-      letter-spacing:.4px;
+      letter-spacing:.5px;
     }
 
   </style>
@@ -290,124 +316,89 @@
 
   <div class="card">
 
-    <div class="status"></div>
+    <div class="top">
 
-    <img
-      class="avatar"
-     src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop"
-    />
+      <img
+        src="https://drive.google.com/thumbnail?id=AKGpihZ-7S6xKI8PtlzclyaC5VewwYJVXY-BlRKuCeB1akPSp9YxH6y4FBr3pJB8DXnvK2eFrpKA_JPu27Z_iXaFHW3BQSotSUBZk8Y"
+      />
 
-    <h1>Somchai Dev</h1>
+      <div class="overlay"></div>
 
-    <div class="position">
-      Full Stack Developer
+      <div class="profile">
+
+        <h1>
+          SOMCHAI<br>
+          DEV
+        </h1>
+
+        <div class="position">
+          Full Stack Developer
+        </div>
+
+        <div class="company">
+
+          <div class="dot"></div>
+
+          BlueWave Technology
+
+        </div>
+
+      </div>
+
     </div>
 
-    <div class="company">
-      BlueWave Technology Co., Ltd.
+    <div class="actions">
+
+      <a
+        class="icon-btn"
+        href="tel:+66812345678"
+      >
+        📞
+      </a>
+
+      <a
+        class="icon-btn"
+        href="mailto:test@example.com"
+      >
+        ✉️
+      </a>
+
+      <a
+        class="icon-btn"
+        href="https://line.me/ti/p/yourid"
+        target="_blank"
+      >
+        💬
+      </a>
+
     </div>
 
-    <div class="divider"></div>
+    <div class="content">
 
-    <a
-      class="action"
-      href="tel:+66812345678"
-    >
+      <div class="section">
 
-      <div class="left">
+        <h2>About Me</h2>
 
-        <div class="icon">
-          📞
-        </div>
-
-        <div class="label">
-          <span>Phone</span>
-          <small>+66 81 234 5678</small>
-        </div>
+        <p>
+          Passionate full stack developer focused on
+          modern web applications, UI/UX experience,
+          scalable backend systems and digital product
+          development.
+        </p>
 
       </div>
 
-      <div class="arrow">
-        →
+      <a
+        class="save"
+        href="contact.vcf"
+      >
+        💾 Save Contact
+      </a>
+
+      <div class="footer">
+        NFC DIGITAL BUSINESS CARD
       </div>
 
-    </a>
-
-    <a
-      class="action"
-      href="mailto:test@example.com"
-    >
-
-      <div class="left">
-
-        <div class="icon">
-          ✉️
-        </div>
-
-        <div class="label">
-          <span>Email</span>
-          <small>test@example.com</small>
-        </div>
-
-      </div>
-
-      <div class="arrow">
-        →
-      </div>
-
-    </a>
-
-    <a
-      class="action"
-      href="https://line.me/ti/p/yourid"
-      target="_blank"
-    >
-
-      <div class="left">
-
-        <div class="icon">
-          LINE
-        </div>
-
-        <div class="label">
-          <span>LINE</span>
-          <small>@yourid</small>
-        </div>
-
-      </div>
-
-      <div class="arrow">
-        →
-      </div>
-
-    </a>
-
-    <a
-      class="action"
-      href="contact.vcf"
-    >
-
-      <div class="left">
-
-        <div class="icon">
-          💾
-        </div>
-
-        <div class="label">
-          <span>Save Contact</span>
-          <small>Add to Contacts</small>
-        </div>
-
-      </div>
-
-      <div class="arrow">
-        →
-      </div>
-
-    </a>
-
-    <div class="footer">
-      NFC DIGITAL BUSINESS CARD
     </div>
 
   </div>
