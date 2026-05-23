@@ -1,0 +1,10 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Somchai Dev
+N:Dev;Somchai;;;
+ORG:Somchai Studio
+TITLE:Full Stack Developer
+TEL;TYPE=CELL:+66812345678
+EMAIL:test@example.com
+URL:https://username.github.io/mycard/
+END:VCARD
