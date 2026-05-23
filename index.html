@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Somchai NFC Card</title>
+  <title>NFC Business Card</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-
     *{
       margin:0;
       padding:0;
@@ -19,60 +19,102 @@
 
     body{
       font-family:'Inter',sans-serif;
-      background:#0a0a0a;
-      color:white;
+      background:
+        radial-gradient(circle at top,#0ea5e9,#020617 60%);
       min-height:100vh;
       display:flex;
       justify-content:center;
       align-items:center;
       padding:20px;
+      color:white;
     }
 
     .card{
       width:100%;
       max-width:420px;
-      background:#111827;
-      border-radius:30px;
+
+      background:rgba(15,23,42,.75);
+
+      backdrop-filter:blur(20px);
+
+      border:1px solid rgba(255,255,255,.08);
+
+      border-radius:32px;
+
       overflow:hidden;
-      border:1px solid #222;
-      box-shadow:0 20px 50px rgba(0,0,0,.5);
+
+      box-shadow:
+        0 20px 60px rgba(0,0,0,.55),
+        0 0 40px rgba(14,165,233,.15);
     }
 
     .banner{
-      height:160px;
-      background:linear-gradient(
-        135deg,
-        #2563eb,
-        #06b6d4,
-        #7c3aed
-      );
+      height:170px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #0284c7,
+          #0ea5e9,
+          #38bdf8,
+          #2563eb
+        );
+
+      position:relative;
+    }
+
+    .banner::after{
+      content:'';
+      position:absolute;
+      inset:0;
+
+      background:
+        linear-gradient(
+          transparent,
+          rgba(0,0,0,.2)
+        );
     }
 
     .content{
       padding:30px;
-      margin-top:-70px;
+      margin-top:-75px;
       text-align:center;
+      position:relative;
+      z-index:2;
     }
 
     .avatar{
-      width:140px;
-      height:140px;
+      width:145px;
+      height:145px;
+
       border-radius:50%;
+
       object-fit:cover;
-      border:5px solid #111827;
-      box-shadow:0 10px 30px rgba(0,0,0,.5);
+
+      border:5px solid rgba(15,23,42,1);
+
+      box-shadow:
+        0 10px 30px rgba(0,0,0,.45);
     }
 
     h1{
       margin-top:18px;
       font-size:32px;
       font-weight:700;
+      letter-spacing:-1px;
     }
 
-    .role{
-      color:#9ca3af;
-      margin-top:8px;
-      font-size:16px;
+    .position{
+      margin-top:10px;
+      font-size:17px;
+      color:#7dd3fc;
+      font-weight:600;
+    }
+
+    .company{
+      margin-top:6px;
+      font-size:15px;
+      color:#cbd5e1;
     }
 
     .buttons{
@@ -83,46 +125,59 @@
     }
 
     .btn{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
       padding:16px;
+
       border-radius:18px;
+
       text-decoration:none;
+
       color:white;
-      font-size:17px;
+
+      font-size:16px;
       font-weight:600;
+
       transition:.25s;
-      display:block;
+
+      backdrop-filter:blur(10px);
+
+      border:1px solid rgba(255,255,255,.08);
     }
 
     .btn:hover{
-      transform:translateY(-2px);
-      opacity:.9;
+      transform:translateY(-3px);
+      opacity:.95;
     }
 
     .call{
-      background:#2563eb;
+      background:#0284c7;
     }
 
     .email{
-      background:#1f2937;
+      background:rgba(255,255,255,.08);
     }
 
     .line{
-      background:#22c55e;
+      background:#06b6d4;
     }
 
     .ig{
-      background:#ec4899;
+      background:#2563eb;
     }
 
     .save{
       background:white;
-      color:black;
+      color:#0f172a;
     }
 
     .footer{
       margin-top:35px;
-      color:#6b7280;
+      color:#94a3b8;
       font-size:14px;
+      letter-spacing:.3px;
     }
 
   </style>
@@ -143,17 +198,27 @@
 
       <h1>Somchai Dev</h1>
 
-      <p class="role">
+      <div class="position">
         Full Stack Developer
-      </p>
+      </div>
+
+      <div class="company">
+        BlueWave Technology Co., Ltd.
+      </div>
 
       <div class="buttons">
 
-        <a class="btn call" href="tel:+66812345678">
+        <a
+          class="btn call"
+          href="tel:+66812345678"
+        >
           📞 Call
         </a>
 
-        <a class="btn email" href="mailto:test@example.com">
+        <a
+          class="btn email"
+          href="mailto:test@example.com"
+        >
           ✉️ Email
         </a>
 
@@ -164,15 +229,6 @@
         >
           LINE
         </a>
-
-        <a
-          class="btn ig"
-          href="https://instagram.com/yourid"
-          target="_blank"
-        >
-          Instagram
-        </a>
-
         <a
           class="btn save"
           href="contact.vcf"
@@ -183,7 +239,7 @@
       </div>
 
       <div class="footer">
-        Tap NFC to connect instantly
+        NFC Digital Business Card
       </div>
 
     </div>
@@ -191,4 +247,5 @@
   </div>
 
 </body>
+
 </html>
