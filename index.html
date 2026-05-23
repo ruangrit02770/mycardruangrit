@@ -81,18 +81,11 @@
 
     .top{
 
-      height:320px;
+      height:520px;
 
       position:relative;
 
       overflow:hidden;
-
-      background:
-        linear-gradient(
-          180deg,
-          #0f172a 0%,
-          #020617 100%
-        );
     }
 
     .top img{
@@ -122,9 +115,9 @@
 
         linear-gradient(
           to top,
-          rgba(2,6,23,1) 12%,
-          rgba(2,6,23,.75) 38%,
-          rgba(2,6,23,.15) 65%
+          rgba(2,6,23,1) 10%,
+          rgba(2,6,23,.72) 35%,
+          rgba(2,6,23,.10) 68%
         ),
 
         radial-gradient(
@@ -139,7 +132,7 @@
       position:absolute;
 
       left:28px;
-      bottom:28px;
+      bottom:34px;
 
       z-index:5;
     }
@@ -157,16 +150,18 @@
 
     .position{
 
-      margin-top:10px;
+      margin-top:12px;
 
       color:#cbd5e1;
 
       font-size:16px;
+
+      font-weight:500;
     }
 
     .company{
 
-      margin-top:14px;
+      margin-top:8px;
 
       color:#94a3b8;
 
@@ -183,23 +178,26 @@
 
       justify-content:center;
 
-      gap:14px;
+      gap:16px;
 
-      margin-top:-30px;
+      padding:22px;
 
-      position:relative;
+      background:
+        rgba(15,23,42,.92);
 
-      z-index:10;
+      border-top:
+        1px solid rgba(255,255,255,.05);
     }
 
     .icon-btn{
 
-      width:64px;
-      height:64px;
+      width:68px;
+      height:68px;
 
-      border-radius:22px;
+      border-radius:24px;
 
-      background:#111827;
+      background:
+        rgba(255,255,255,.04);
 
       border:
         1px solid rgba(255,255,255,.06);
@@ -214,62 +212,24 @@
 
       color:white;
 
-      font-size:24px;
+      font-size:26px;
 
       transition:.25s;
 
-      box-shadow:
-        0 10px 25px rgba(0,0,0,.35);
+      backdrop-filter:blur(12px);
     }
 
     .icon-btn:hover{
 
       transform:translateY(-4px);
 
-      background:#1e293b;
-    }
-
-    .content{
-
-      padding:32px 24px 24px;
-    }
-
-    .section{
-
-      margin-top:10px;
-
       background:
-        rgba(255,255,255,.03);
-
-      border:
-        1px solid rgba(255,255,255,.05);
-
-      border-radius:26px;
-
-      padding:24px;
-    }
-
-    .section h2{
-
-      font-size:22px;
-
-      margin-bottom:14px;
-
-      font-weight:700;
-    }
-
-    .section p{
-
-      color:#cbd5e1;
-
-      line-height:1.7;
-
-      font-size:15px;
+        rgba(255,255,255,.08);
     }
 
     .save{
 
-      margin-top:22px;
+      margin:0 22px 22px;
 
       display:flex;
 
@@ -279,13 +239,43 @@
 
       gap:12px;
 
-      width:100%;
-
       padding:18px;
 
-      border-radius:22px;
+      border-radius:24px;
 
       text-decoration:none;
+
+      background:
+        rgba(255,255,255,.05);
+
+      border:
+        1px solid rgba(255,255,255,.08);
+
+      color:white;
+
+      font-weight:600;
+
+      font-size:16px;
+
+      transition:.25s;
+
+      backdrop-filter:blur(12px);
+    }
+
+    .save:hover{
+
+      transform:translateY(-3px);
+
+      background:
+        rgba(255,255,255,.08);
+    }
+
+    .save-icon{
+
+      width:30px;
+      height:30px;
+
+      border-radius:50%;
 
       background:
         linear-gradient(
@@ -294,25 +284,23 @@
           #2563eb
         );
 
-      color:white;
+      display:flex;
+
+      align-items:center;
+
+      justify-content:center;
+
+      font-size:20px;
 
       font-weight:700;
 
-      font-size:16px;
-
-      transition:.25s;
-    }
-
-    .save:hover{
-
-      transform:translateY(-3px);
-
-      opacity:.92;
+      box-shadow:
+        0 0 18px rgba(14,165,233,.45);
     }
 
     .footer{
 
-      margin-top:18px;
+      padding-bottom:22px;
 
       text-align:center;
 
@@ -383,32 +371,21 @@
 
     </div>
 
-    <div class="content">
+    <a
+      class="save"
+      href="contact.vcf"
+    >
 
-      <div class="section">
+      <span class="save-icon">
+        +
+      </span>
 
-        <h2>About Me</h2>
+      Add Contact
 
-        <p>
-          Passionate full stack developer focused on
-          modern web applications, UI/UX experience,
-          scalable backend systems and digital product
-          development.
-        </p>
+    </a>
 
-      </div>
-
-      <a
-        class="save"
-        href="contact.vcf"
-      >
-        💾 Save Contact
-      </a>
-
-      <div class="footer">
-        NFC DIGITAL BUSINESS CARD
-      </div>
-
+    <div class="footer">
+      NFC DIGITAL BUSINESS CARD
     </div>
 
   </div>
